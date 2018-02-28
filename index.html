@@ -18,7 +18,7 @@
       <div class="map__pinsoverlay"><h2>И снова Токио!</h2></div>
 
       <button class="map__pin map__pin--main">
-        <img src="img/main-pin-image.png" width="40" height="44" draggable="false">
+        <img src="img/main-pin-image.png" width="40" height="44" draggable="true">
         <svg viewBox="0 0 70 70">
           <defs>
             <path d="M35,35m-23,0a23,23 0 1,1 46,0a23,23 0 1,1 -46,0" id="tophalf" />
@@ -85,7 +85,7 @@
   <div class="notice">
     <h2 class="notice__title">Ваше объявление</h2>
 
-    <form class="notice__form notice__form--disabled" method="post" enctype="multipart/form-data" autocomplete="off">
+    <form class="notice__form notice__form--disabled" method="post" enctype="multipart/form-data" action='https://js.dump.academy/keksobooking' autocomplete="off">
       <fieldset class="notice__header">
         <legend>Ваша фотография (для карты)</legend>
         <div class="notice__photo">
@@ -102,7 +102,7 @@
 
       <fieldset class="form__element form__element--wide">
         <label for="title">Заголовок объявления</label>
-        <input id="title" name="title" type="text" placeholder="Милая, уютная квартирка в центре Токио">
+        <input id="title" name="title" type="text" placeholder="Милая, уютная квартирка в центре Токио" minlength="30" maxlength="100" required>
       </fieldset>
 
       <fieldset class="form__element form__element--wide">
@@ -122,7 +122,7 @@
 
       <fieldset class="form__element">
         <label for="price">Цена за ночь, руб.</label>
-        <input id="price" name="price" type="number" placeholder="5000">
+        <input id="price" name="price" type="number" placeholder="5000" min="0" max="1000000"  required>
       </fieldset>
 
       <fieldset class="form__element">
@@ -244,6 +244,16 @@
 
   <button style="left: 200px; top: 400px;" class="map__pin"><img src="img/avatars/user07.png" width="40" height="40" draggable="false"></button>
 </template>
+
+<script type="text/javascript" src="./js/debounce.js"></script>
+<script type="text/javascript" src="./js/backend.js"></script>
+<script type="text/javascript" src="./js/data.js"></script>
+<script type="text/javascript" src="./js/map.js"></script>
+<script type="text/javascript" src="./js/pin.js"></script>
+<script type="text/javascript" src="./js/card.js"></script>
+<script type="text/javascript" src="./js/synchronize-fields.js"></script>
+<script type="text/javascript" src="./js/form.js"></script>
+<script type="text/javascript" src="./js/show-card.js"></script>
 
 </body>
 </html>
